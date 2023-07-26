@@ -1,6 +1,7 @@
 import { Text, SimpleGrid } from "@chakra-ui/react";
 import GameFetch from "../hooks/GameFetch";
 import GameView from "./GameView";
+import Genre from "./Genre";
 
 const GameGrid = () => {
   const { listOfGames, error } = GameFetch();
