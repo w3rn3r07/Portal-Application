@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
+import DataFetch from "./DataFetch";
+import { ListGenre } from "./GenreFetch";
+import GameGrid from "../components/GameGrid";
 
 export interface GamePlatform{
     id: number;
@@ -14,24 +15,6 @@ export interface Games {
     background_image: string;
   }
   
-  interface FetchGame {
-    count: number;
-    results: Games[];
-  }
-const GameFetch = () => {
-    const [listOfGames, setListOfGames] = useState<Games[]>([]);
-    const [error, setError] = useState("");
-  
-    useEffect(() => {
-      apiClient
-        .get<FetchGame>("/games")
-        .then((response) => setListOfGames(response.data.results))
-        .catch((error) => setError(error.message));
-    
-    },[]);
-
-    return ({listOfGames, error})
-  
-}
+const GameFetch = (selectedGenre: ListGenre | null) => DataFetch<Games>('/games', {params: {genres: selectedGenre?.id}}, [selectedGenre?.id])
 
 export default GameFetch;

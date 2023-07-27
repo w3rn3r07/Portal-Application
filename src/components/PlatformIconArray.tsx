@@ -1,5 +1,5 @@
 import { GamePlatform } from "../hooks/GameFetch";
-import { Text, Icon } from "@chakra-ui/react";
+import { Text, Icon, Heading } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 import {
   FaPlaystation,
@@ -11,7 +11,7 @@ import {
 interface IconProps {
   platforms: GamePlatform[];
 }
-const platformText = "Available platforms";
+const platformText = "Available platforms:";
 const PlatformIconArray = ({ platforms }: IconProps) => {
   const iconMap: { [key: string]: IconType } = {
     pc: FaWindows,
@@ -22,9 +22,16 @@ const PlatformIconArray = ({ platforms }: IconProps) => {
   };
   return (
     <>
-      <Text>{platformText}</Text>
+      <Heading fontSize={"1xl"} paddingTop={2}>
+        {platformText}
+      </Heading>
       {platforms.map((platform) => (
-        <Icon as={iconMap[platform.slug]} color={"black.100"} margin={1} />
+        <Icon
+          key={platform.id}
+          as={iconMap[platform.slug]}
+          color={"black.100"}
+          margin={1}
+        />
       ))}
     </>
   );

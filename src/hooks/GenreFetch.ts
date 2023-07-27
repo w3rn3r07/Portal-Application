@@ -1,24 +1,11 @@
-import { useState, useEffect } from "react";
-import apiClient from "../services/api-client";
-import { Games } from "./GameFetch";
+import DataFetch from "./DataFetch";
 
-interface FetchGenre{
-    id:number
-    name:string
+export interface ListGenre{
+    id:number;
+    name:string;
+    image_background: string;
 }
-const GenreFetch = () => {
-    const [listOfGenres, setListOfGenres] = useState<Games[]>([]);
-    const [error, setError] = useState("");
-  
-    useEffect(() => {
-      apiClient
-        .get<FetchGenre>("/genres")
-        .then((response) => setListOfGenres(response.data.results))
-        .catch((error) => setError(error.message));
-    
-    },[]);
 
-    return ({listOfGenres, error})
-};
+const GenreFetch = () => DataFetch<ListGenre>('/genres')
 
 export default GenreFetch;
