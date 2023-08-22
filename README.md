@@ -26,5 +26,8 @@ This Application is a web-based application that allows users to explore and dis
 - Chakra UI: styling component library for React.
 - Axios: HTTP client for making API requests.
 - RAWG.io API: An external API providing data about video games website:`https://rawg.io/`.
-- TypeScript: Used dinstead of Javascript.
+- TypeScript: Used instead of Javascript.
 - Vite: build tool for setting up the project.
+
+## Project Documentation
+-[https://docs.google.com/document/d/1H6Etr7zEfyLoNMMYz-mNx0b3Iki8h4Pc/edit?usp=sharing&ouid=107582112753366454859&rtpof=true&sd=true](url)
