@@ -31,3 +31,4 @@ This Application is a web-based application that allows users to explore and dis
 
 ## Project Documentation
 -[https://docs.google.com/document/d/1H6Etr7zEfyLoNMMYz-mNx0b3Iki8h4Pc/edit?usp=sharing&ouid=107582112753366454859&rtpof=true&sd=true](url)
+  (Open on a new tab)
